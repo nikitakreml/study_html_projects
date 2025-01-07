@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+<div>
+    <button id = "clicker">1</button>
+</div>
+<style>
+#clicker
+{
+    width: 300px;
+     height: 300px;
+      background-color: darkorchid;
+       border: 15px solid purple ;
+        border-radius: 10%; color:purple;
+         font-size: 150px;
+}
+
+
+</style>
+
+<script>
+var a = Number(1);
+clicker.addEventListener('click',function() {
+    a++;
+    clicker.innerHTML = a;
+    
+    if(a>1000)
+    {
+        clicker.style.width="450px";
+    }
+
+});
+
+
+</script>
+
+</body>
+</html>

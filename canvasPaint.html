@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: #7bed9f;
+    }
+    canvas{
+      background-color: #fff;
+      border: 1px solid #2D2D2D;
+      margin-top: 70px;
+      box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    }
+  </style>
+</head>
+<body>
+  <canvas width="600" height="300"></canvas>
+  <input type="color" id = "clr">
+
+  <script>
+    'use strict';
+
+    let cnvEl = document.querySelector('canvas');
+
+    let coord = {
+    	x: 0,
+    	y:0
+    }
+
+    let flag = 0;
+
+
+
+    cnvEl.addEventListener('mousedown', function() {
+    	flag = 1;
+    })
+
+    cnvEl.addEventListener('mouseup', function() {
+    	flag = 0;
+    });
+
+
+
+    cnvEl.addEventListener('mousemove', function(e){
+
+    	coord.x = Number(e.clientX) - Number(cnvEl.getBoundingClientRect().left);
+        coord.y = Number(e.clientY) - Number(cnvEl.getBoundingClientRect().top);
+
+      let ctx = cnvEl.getContext('2d');
+      if(flag == 1)
+       {
+        ctx.beginPath();
+        ctx.arc(coord.x, coord.y, 3, 0, 2*Math.PI, false);
+        ctx.fillStyle = clr.value;
+        ctx.fill();
+       };
+    });
+
+  </script>
+</body>
+</html>

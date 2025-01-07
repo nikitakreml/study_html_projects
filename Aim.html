@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<style type="text/css">
+	#button {
+		position: absolute;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: indianred;
+	}
+</style>
+<head>
+  <title>Example</title>
+</head>
+<body style="background-color: darkslategray;">
+	<button id = "button"></button>
+
+   <script>
+    "use strict"
+
+      button.addEventListener('click', function(e) {
+        let x = Math.floor(Math.random() * (1870 - 0)) + 0;
+        let y = Math.floor(Math.random() * (900 - 0)) + 0;
+
+        button.style.left = x+"px";
+        button.style.top = y+"px";
+    });
+   </script>
+</body>
+</html>

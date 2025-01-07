@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		#box {
+			width: 720px;
+			height: 480px;
+			border: 1px solid black ;
+		}
+		#pic {
+            width: 648px;
+            height: 65%;
+            margin-top: 5%;
+            margin-left: 5%;
+		}
+		#flex {
+			display: flex;
+			justify-content: space-around;
+		}
+		.button {
+			width: 30px;
+			height: 30px;
+			background-color: red;
+			border-radius: 50%;
+			margin-top: 5%
+		}
+		.lime {
+			background-color: #00FA9A;
+		}
+		.crimson{
+			background-color: #DC143C;
+		}
+		.pink {
+           background-color: #FFB6C1;
+		}
+	</style>
+</head>
+<body>
+<div id="box">
+	<div id = "pic" class=""></div>
+	<div id= "flex">
+		<div id="buttonLime" class="button"></div>
+		<div id="buttonCrimson" class="button"></div>
+		<div id="buttonPink" class="button"></div>
+	</div>
+</div>
+<script>
+	buttonLime.addEventListener('click', function(){
+		pic.classList.remove("crimson");
+		pic.classList.remove("pink");
+     pic.classList.toggle("lime");
+	})
+	buttonCrimson.addEventListener('click', function(){
+		pic.classList.remove("lime");
+		pic.classList.remove("pink");
+     pic.classList.toggle("crimson");
+	})
+	buttonPink.addEventListener('click', function(){
+		pic.classList.remove("lime");
+		pic.classList.remove("crimson");
+     pic.classList.toggle("pink");
+	})
+</script>
+</body>
+</html>

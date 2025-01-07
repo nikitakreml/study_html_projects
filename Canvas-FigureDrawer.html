@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col col-6">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Прямоугольник</h5>
+<p class="card-text">Нарисовать прямоуголник по координатам:</p>
+<input id="rect_x" type="text" class="form-control" placeholder="x">
+<input id="rect_y" type="text" class="form-control" placeholder="y">
+<input id="rect_w" type="text" class="form-control" placeholder="width">
+<input id="rect_h" type="text" class="form-control" placeholder="height">
+<input id="rect_c" type="text" class="form-control" placeholder="color">
+<button id="BtnCreateRect" type="button" class="btn btn-primary">Нарисовать</button>
+</div>
+</div>
+</div>
+<div class="col col-6">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Окружность</h5>
+<p class="card-text">Нарисовать окружность по координатам:</p>
+<input id="cir_x" type="text" class="form-control" placeholder="x">
+<input id="cir_y" type="text" class="form-control" placeholder="y">
+<input id="cir_r" type="text" class="form-control" placeholder="radius">
+<input id="cir_c" type="text" class="form-control" placeholder="color">
+<button id="BtnCreateCir" type="button" class="btn btn-primary">Нарисовать</button>
+
+<h5 class="card-title">Линия</h5>
+<p class="card-text">Нарисовать линию по координатам:</p>
+<input id="l_x" type="text" class="form-control" placeholder="x">
+<input id="l_y" type="text" class="form-control" placeholder="y">
+<input id="l_xend" type="text" class="form-control" placeholder="xend">
+<input id="l_yend" type="text" class="form-control" placeholder="yend">
+<button id="BtnCreateLine" type="button" class="btn btn-primary">Нарисовать</button>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<canvas id="game"></canvas>
+<script>
+    // Получаем контекст для рисования на Canvas
+    let ctx = game.getContext('2d');
+
+    // ------Обработка нажатий на кнопки-------
+
+    // Рисуем прямоугольник
+    document.querySelector('#BtnCreateRect').addEventListener('click', function() {
+
+      let x = document.querySelector('#rect_x').value;
+      let y = document.querySelector('#rect_y').value;
+      let w = document.querySelector('#rect_w').value;
+      let h = document.querySelector('#rect_h').value;
+      let c = document.querySelector('#rect_c').value;
+
+      // Место для вашего кода
+
+      let ctx = game.getContext("2d")
+
+      ctx.fillStyle = c;
+      ctx.fillRect(x, y, w, h);
+       
+    });
+
+    document.querySelector('#BtnCreateCir').addEventListener('click', function() {
+
+      let x = document.querySelector('#cir_x').value;
+      let y = document.querySelector('#cir_y').value;
+      let r = document.querySelector('#cir_r').value;
+      let c = document.querySelector('#cir_c').value;
+
+      // Место для вашего кода
+
+      let ctx = game.getContext("2d")
+	    ctx.arc(x, y, r, 0, 2*Math.PI, false);
+	    ctx.fillStyle = c;
+	    ctx.fill();
+    });
+
+     document.querySelector('#BtnCreateLine').addEventListener('click', function() {
+
+      let x = document.querySelector('#l_x').value;
+      let y = document.querySelector('#l_y').value;
+      let xend = document.querySelector('#l_xend').value;
+      let yend = document.querySelector('#l_yend').value;
+
+      ctx.beginPath();       
+      ctx.moveTo(x, y);    
+      ctx.lineTo(xend, yend); 
+      ctx.stroke();    
+    });      
+  </script>
+</body>
+</html>
